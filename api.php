@@ -10,7 +10,6 @@
 	include(PATH_CONFIGS . "db.php");
 	include(PATH_CONFIGS . "mail.php");
 	
-	include(PATH_LIBS . "lib.php");
 	include(PATH_LIBS . "sql.class.php");
 
 	include(PATH_LIBS . "request.class.php");
@@ -19,6 +18,5 @@
 	include(PATH_LIBS . "helper.class.php");	
 	include(PATH_LIBS . "phpqrcode/qrlib.php");
 
-	include("libs/users.class.php");
 	
 	
