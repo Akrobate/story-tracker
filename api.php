@@ -2,6 +2,7 @@
 
 	define ("PATH_CURRENT", "./" );
 	define ("PATH_CONFIGS", PATH_CURRENT. "config/");
+	define ("PATH_CACHE", PATH_CURRENT. "cache/");	
 	define ("PATH_LIBS", PATH_CURRENT . "libs/" );
 	define ("LIBS_PATH", PATH_CURRENT . "libs/" );
 	define ("PATH_SCRIPTS", PATH_CURRENT . "controllers/" );
@@ -11,9 +12,9 @@
 	include(PATH_CONFIGS . "mail.php");
 	
 	include(PATH_LIBS . "sql.class.php");
-
+	include(PATH_LIBS . "orm.status.class.php");
 	include(PATH_LIBS . "request.class.php");
-
+	include(PATH_LIBS . "html.render.class.php");
 
 	include(PATH_LIBS . "helper.class.php");	
 	include(PATH_LIBS . "phpqrcode/qrlib.php");
