@@ -96,6 +96,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#" id="check-trigger">Actualiser <span class="badge"></span></a></li>
             <li><a href="#">Parametrage</a></li>
+            <li><a href="<?=url::internal("stories", "indexqrcode")?>">QRIndex</a></li>
+            <li><a href="<?=url::internal("stories", "index")?>">Strories</a></li>
           </ul>
         </div>
       </div>
