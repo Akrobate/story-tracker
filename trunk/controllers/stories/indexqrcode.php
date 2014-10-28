@@ -20,9 +20,13 @@
 			$data[$i] = array_merge ($emptymore, $data[$i]);
 		}
 		
-		$codeContents = $data[$i]['uid'] . $data[$i]['name'];
+		// $codeContents = $data[$i]['uid'] . $data[$i]['name'];
+		$codeContents = SITE_URL . "" . url::internal("statuses", "add", $data[$i]['uid'] ) ;		
+		
+		//echo($codeContents);
+		
 		// Generating Qrcodes
-		QRcode::png($codeContents, PATH_CACHE. $data[$i]['uid'] . '.png', QR_ECLEVEL_L, 8);
+		QRcode::png($codeContents, PATH_CACHE. $data[$i]['uid'] . '.png', QR_ECLEVEL_L, 4);
 		
 		$i++;
 	}
