@@ -14,6 +14,8 @@
 		$action = "index";
 	}
 	
+	users::tryToAuth();
+	
 	if (!users::isConnected()) {
 
 		$controller = "users";
