@@ -11,6 +11,12 @@ class url {
 	}
 
 
+	static function redirect($controller, $action, $id = null, $other_params = null){
+		$querystr = self::internal($controller, $action, $id = null, $other_params = null);
+		header("Location: index.php" . $querystr);
+	}
+
+
 
 	static function internal($controller, $action, $id = null, $other_params = null) {
 		if (self::$rewrited) {

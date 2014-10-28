@@ -1,5 +1,8 @@
 <?
 
+	define ("ADMIN_LOGIN", "987" );	
+	define ("ADMIN_PASSWORD", "987" );
+
 	define ("PATH_CURRENT", "./" );
 	define ("PATH_CONFIGS", PATH_CURRENT. "config/");
 	define ("PATH_CACHE", PATH_CURRENT. "cache/");	
@@ -10,7 +13,6 @@
 
 	define ("SITE_URL", "http://192.168.0.14/story-tracker/index.php");
 
-
 	include(PATH_CONFIGS . "db.php");
 	include(PATH_CONFIGS . "mail.php");
 	
@@ -18,6 +20,7 @@
 	include(PATH_LIBS . "orm.status.class.php");
 	include(PATH_LIBS . "request.class.php");
 	include(PATH_LIBS . "html.render.class.php");
+	include(PATH_LIBS . "users.class.php");	
 
 	include(PATH_LIBS . "helper.class.php");	
 	include(PATH_LIBS . "phpqrcode/qrlib.php");
