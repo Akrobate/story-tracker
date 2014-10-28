@@ -8,22 +8,24 @@
 <table class="table table-hover">
 	<tr>
 		<th></th>
-		<th>ID</th>
-		<th></th>
+		<th>QRLink</th>
+
 		
-		<th>Status Acutel</th>
-		<th>Status Action</th>	
 		<th></th>
+		<th>QRLink</th>	
+
 	</tr>	
 	
-	<? foreach ($data as $d): ?>
+	<? for($i=0; $i < count($data); $i++) :  ?>
+	
+	
 		<tr class="object">
-			<td><?=$d['rank']?></td>
-			<td><?=$d['uid']?></td>
-			<td><?=utf8_encode($d['name'])?></td>
-			
+		<? $d = $data[$i]; ?>			
 			<td>
-				<span class="badge alert-danger"><?=$d['effort']?></span><br />
+				<span class="badge alert-danger">Rank: <?=$d['rank']?></span><br />
+				<span class="badge alert-info">Id: <?=$d['uid']?> <?=utf8_encode($d['name'])?></span><br />
+				
+				<span class="badge alert-danger">Effort: <?=$d['effort']?></span><br />
 				<span class="badge alert-success"><?=$d['status']?></span><br />
 				<? if ($d['created']):?> 
 					<span class="badge">
@@ -31,16 +33,41 @@
 					</span>			
 				<? endif; ?>
 			</td>
-			
 			<td>
-				<a class="glyphicon glyphicon-book" href="<?=url::internal("statuses", "view", $d['uid'])?>" ></a>
-				<a class="glyphicon glyphicon-edit" href="<?=url::internal("statuses", "add", $d['uid'])?>" ></a>
+				<img src="<?=PATH_CACHE . $d['uid'] . '.png' ?>" />
+			</td>
+		
+		
+		<? if (isset($data[$i+1])): ?>
+		
+			<? $i++; ?>
+			<? $d = $data[$i]; ?>
+			<td>
+				<span class="badge alert-danger">Rank: <?=$d['rank']?></span><br />
+				<span class="badge alert-info">Id: <?=$d['uid']?> <?=utf8_encode($d['name'])?></span><br />
+				
+				<span class="badge alert-danger">Effort: <?=$d['effort']?></span><br />
+				<span class="badge alert-success"><?=$d['status']?></span><br />
+				<? if ($d['created']):?> 
+					<span class="badge">
+						Il y à <?= html::secondsToRemainingTime(time() - strtotime($d['created']))  ?>
+					</span>			
+				<? endif; ?>
 			</td>
 			<td>
 				<img src="<?=PATH_CACHE . $d['uid'] . '.png' ?>" />
 			</td>
-		</tr>	
-	<? endforeach; ?>
+		
+		<? else: ?>
+		
+			<td></td>
+			<td></td>
+			
+		
+		<?endif; ?>
+		
+		</tr>
+	<? endfor; ?>
 	
 </table>
 

@@ -8,6 +8,9 @@
 	define ("PATH_SCRIPTS", PATH_CURRENT . "controllers/" );
 	define ("PATH_TEMPLATES", PATH_CURRENT."templates/");
 
+	define ("SITE_URL", "http://192.168.0.14/story-tracker/index.php");
+
+
 	include(PATH_CONFIGS . "db.php");
 	include(PATH_CONFIGS . "mail.php");
 	
