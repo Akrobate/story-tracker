@@ -26,49 +26,9 @@
    
      <script src="js/jquery-boards.js"></script>
     <script src="js/script.js"></script>
-    
-	<script>
-		$(document).ready(function() { 
-		
-		
-			$("#team-selector").change(function() {
-				
-				$(this).parent("form").submit();
-				
-			});
-			
-			
-			
-			$("#check-trigger").click(function() {
-			
-				var datas = {};
-				 $.ajax({  
-					type: 'POST',        
-					url: "index.php?controller=calendars&action=ajax-check",  
-					data: datas,
-					dataType: 'json',    
-					success: function(resp) {
-						if (resp['msg'] == 'OK') {
-							console.log(resp);
-							$("#check-trigger .badge").html(resp['new']);
-						} else {
-							console.log(resp);
-							
-						}
-					}  
-				  });
-					
-			});
-			
-			
-			
-			
-		});
-	
-	
-	
-	</script>
+    <script>
 
+	</script>
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -95,7 +55,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<?=url::internal("users", "logout")?>" id="check-trigger">Deconnection <span class="badge"></span></a></li>
-            <li><a href="#">Parametrage</a></li>
+            <li><a href="<?=url::internal("parametres", "edit")?>" >Parametrage</a></li>
             <li><a href="<?=url::internal("stories", "indexqrcode")?>">QRIndex</a></li>
             <li><a href="<?=url::internal("stories", "index")?>">Strories</a></li>
           </ul>
@@ -106,12 +66,13 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div class="col-sm-12  main">
+        <div class="col-sm-12  main">        
 			<?=$template_content?>	
         </div>
         
       </div>
     </div>
+    
   </body>
 </html>
 

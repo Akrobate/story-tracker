@@ -35,6 +35,11 @@
 				require_once (PATH_SCRIPTS . $controller . "/" . $action . ".php");
 			}
 
+		} elseif ($action_tab[0] == 'html') {
+			if(file_exists(PATH_SCRIPTS . $controller . "/" . $action . ".php")) {
+				require_once (PATH_SCRIPTS . $controller . "/" . $action . ".php");
+				require_once (PATH_TEMPLATES . $controller . "/" . $action . ".php");
+			}
 		} else {
 			if ((file_exists(PATH_SCRIPTS . $controller . "/" . $action . ".php")) 
 				&& ((PATH_TEMPLATES . $controller . "/" . $action . ".php"))) {

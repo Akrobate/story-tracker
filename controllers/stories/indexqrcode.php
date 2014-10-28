@@ -1,6 +1,9 @@
 <?php
 
-	$sprint_id = 48;
+
+	$obj = params::get(PATH_CURRENT . "params.json");
+	$sprint_id = $obj->sprint_id;
+	//$sprint_id = 48;
 	
 	$query = "SELECT rank, uid, name, effort FROM `icescrum2_story` WHERE parent_sprint_id = $sprint_id order by rank ASC; ";
 	
