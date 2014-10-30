@@ -31,7 +31,7 @@ Il y à <?= html::secondsToRemainingTime(time() - strtotime($d['created']))  ?><
 </span>			
 			
 			<td>
-				<a class="glyphicon glyphicon-book" href="<?=url::internal("statuses", "view", $d['uid'])?>" ></a>
+				<!--a class="glyphicon glyphicon-book" href="<?=url::internal("statuses", "view", $d['uid'])?>" ></a-->
 				<a class="glyphicon glyphicon-edit" href="<?=url::internal("statuses", "add", $d['uid'])?>" ></a>
 			</td>
 			
